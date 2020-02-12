@@ -45,6 +45,7 @@ def strip_vowels(text: str) -> Tuple[str, int]:
        of Python's new type hinting:
        https://docs.python.org/3/library/typing.html"""
     asterixed_text = re.sub(vowels_pipe_delim, '*', text)
-    nbr_of_asterixes = len([ele for ele in asterixed_text if ele == '*'])
+    nbr_of_asterixes = len([ele for ele in text if ele in vowels + vowels_uc])
     return(asterixed_text, nbr_of_asterixes)
 
+# print(strip_vowels(text))
