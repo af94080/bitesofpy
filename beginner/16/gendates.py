@@ -6,7 +6,7 @@ hundred_day_interval = timedelta(days=100)
 
 
 def gen_special_pybites_dates(start=INITIAL_DATE):
-	next_100 = start
+	next_100 = start + hundred_day_interval
 	next_year = start + year_interval
 	while True:
 
