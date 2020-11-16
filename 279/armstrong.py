@@ -23,9 +23,22 @@ def is_armstrong_david_colton(n: int) -> bool:
     return sum([int(num)**len(str(n)) for num in str(n)]) == n
 
 def is_armstrong_alex(n: int) -> bool:
+    return sum([pow(int(x), len(str(n))) for x in str(n)]) == n
+
+def is_armstrong_geoff(n: int) -> bool:
+    potential = str(n)
+    power = len(potential)
+    return n == sum(pow(int(num), power) for num in potential)
 
 
 #### their solution: by daniel
+
+def is_armstrong_official_solution_corrected(n: int) -> bool:
+    summed_n = 0
+    for i in str(n):
+        summed_n += int(i)**len(str(n))
+    return True if summed_n == n else False    
+
 
 def is_armstrong_official_solution(n: int) -> bool:
 
