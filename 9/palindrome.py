@@ -29,6 +29,8 @@ def get_longest_palindrome(words=None):
     """Given a list of words return the longest palindrome
        If called without argument use the load_dictionary helper
        to populate the words list"""
+    if not words:
+      words = load_dictionary()
     only_palins = filter(is_palindrome, words)
     word_by_length = {word : len(word) for word in only_palins}
     return sorted(word_by_length, key=word_by_length.get, reverse=True)[0]
